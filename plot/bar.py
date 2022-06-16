@@ -21,9 +21,9 @@ def bar_plot(df):
         Jawatimur = data_covid[data_covid['PROVINSI'] == 'JAWA TIMUR'][['KASUS','SEMBUH','MENINGGAL']]
         Jakarta = data_covid[data_covid['PROVINSI'] == 'DKI JAKARTA'][['KASUS','SEMBUH','MENINGGAL']]
         Banten = data_covid[data_covid['PROVINSI'] == 'BANTEN'][['KASUS','SEMBUH','MENINGGAL']]
-        Bali = data_covid[data_covid['PROVINSI'] == 'BALI'][['KASUS','SEMBUH','MENINGGAL']]
+        Yogyakarta = data_covid[data_covid['PROVINSI'] == 'DAERAH ISTIMEWA YOGYAKARTA'][['KASUS','SEMBUH','MENINGGAL']]
 
-        province = ['Jawa Barat', 'Jawa Tengah', 'Jawa Timur', 'DKI Jakarta', 'Banten', 'Bali']
+        province = ['Jawa Barat', 'Jawa Tengah', 'Jawa Timur', 'DKI Jakarta', 'Banten', 'DI Yogyakarta']
 
         # Generate total case, heal, death per province
         case = [int(Jawabarat['KASUS'].sum()),
@@ -31,19 +31,19 @@ def bar_plot(df):
                 int(Jawatimur['KASUS'].sum()), 
                 int(Jakarta['KASUS'].sum()), 
                 int(Banten['KASUS'].sum()), 
-                int(Bali['KASUS'].sum())]
+                int(Yogyakarta['KASUS'].sum())]
         heal = [int(Jawabarat['SEMBUH'].sum()), 
                 int(Jawatengah['SEMBUH'].sum()), 
                 int(Jawatimur['SEMBUH'].sum()), 
                 int(Jakarta['SEMBUH'].sum()), 
                 int(Banten['SEMBUH'].sum()), 
-                int(Bali['SEMBUH'].sum())]
+                int(Yogyakarta['SEMBUH'].sum())]
         death = [int(Jawabarat['MENINGGAL'].sum()), 
                 int(Jawatengah['MENINGGAL'].sum()), 
                 int(Jawatimur['MENINGGAL'].sum()), 
                 int(Jakarta['MENINGGAL'].sum()), 
                 int(Banten['MENINGGAL'].sum()), 
-                int(Bali['MENINGGAL'].sum())]
+                int(Yogyakarta['MENINGGAL'].sum())]
 
         # Generate data source
         source = ColumnDataSource(data=dict(province=province, case=case, heal=heal, death=death, color=Spectral6))
@@ -65,7 +65,7 @@ def bar_plot(df):
                 Jawatimur = df[df['PROVINSI'] == 'JAWA TIMUR'][['KASUS','SEMBUH','MENINGGAL']]
                 Jakarta = df[df['PROVINSI'] == 'DKI JAKARTA'][['KASUS','SEMBUH','MENINGGAL']]
                 Banten = df[df['PROVINSI'] == 'BANTEN'][['KASUS','SEMBUH','MENINGGAL']]
-                Bali = df[df['PROVINSI'] == 'BALI'][['KASUS','SEMBUH','MENINGGAL']]
+                Yogyakarta = df[df['PROVINSI'] == 'DAERAH ISTIMEWA YOGYAKARTA'][['KASUS','SEMBUH','MENINGGAL']]
 
                 # Generate new total case, heal, death per province
                 new_case = [int(Jawabarat['KASUS'].sum()),
@@ -73,19 +73,19 @@ def bar_plot(df):
                                 int(Jawatimur['KASUS'].sum()), 
                                 int(Jakarta['KASUS'].sum()), 
                                 int(Banten['KASUS'].sum()), 
-                                int(Bali['KASUS'].sum())]
+                                int(Yogyakarta['KASUS'].sum())]
                 new_heal = [int(Jawabarat['SEMBUH'].sum()), 
                                 int(Jawatengah['SEMBUH'].sum()), 
                                 int(Jawatimur['SEMBUH'].sum()), 
                                 int(Jakarta['SEMBUH'].sum()), 
                                 int(Banten['SEMBUH'].sum()), 
-                                int(Bali['SEMBUH'].sum())]
+                                int(Yogyakarta['SEMBUH'].sum())]
                 new_death = [int(Jawabarat['MENINGGAL'].sum()), 
                                 int(Jawatengah['MENINGGAL'].sum()), 
                                 int(Jawatimur['MENINGGAL'].sum()), 
                                 int(Jakarta['MENINGGAL'].sum()), 
                                 int(Banten['MENINGGAL'].sum()), 
-                                int(Bali['MENINGGAL'].sum())]
+                                int(Yogyakarta['MENINGGAL'].sum())]
 
                 # Generate new data for data source
                 new_data = dict(province=province, case=new_case, heal=new_heal, death=new_death, color=Spectral6)
@@ -98,7 +98,7 @@ def bar_plot(df):
                 fig = figure(x_range=province, 
                                 height=500, 
                                 width=1000, 
-                                title="Kasus Covid-19 Di Provinsi Besar Pulau Jawa", 
+                                title="Kasus Covid-19 Di 6 Provinsi Besar di Pulau Jawa", 
                                 tooltips=tooltips)
 
                 # Create bar plot
