@@ -98,7 +98,7 @@ def bar_plot(df):
                 fig = figure(x_range=province, 
                                 height=500, 
                                 width=1000, 
-                                title="Kasus Covid-19 Di 6 Provinsi Besar di Pulau Jawa", 
+                                title="Kasus Covid-19 di 6 Provinsi Besar di Pulau Jawa", 
                                 tooltips=tooltips)
 
                 # Create bar plot
