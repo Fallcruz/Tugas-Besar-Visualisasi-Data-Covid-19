@@ -21,7 +21,7 @@ def line_plot(df):
     def make_line_plot(source, hover_tool, start, end):
         # Cretae Figure
         fig = figure(title='Line Chart Example',
-                    tools=[hover_tool],
+                    tools=[hover_tool, 'pan,wheel_zoom,box_zoom,save,reset,help'],
                     x_axis_label='Date',
                     y_axis_label='Kasus vs Sembuh',
                     width=1000,
@@ -119,6 +119,6 @@ def line_plot(df):
     end_date = DatePicker(title='Ene Date', value=end, min_date="2020-03-01", max_date="2022-05-19")
     end_date.on_change("value", update_line_plot)
 
-    layout = row(Column(select, start_date, end_date), plot)
+    layout = Column(select, start_date, end_date, plot)
 
     return Panel(child=layout, title='Line Plot')
