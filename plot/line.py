@@ -1,10 +1,7 @@
 import pandas as pd
 from bokeh.plotting import figure
 from bokeh.models import HoverTool, ColumnDataSource
-from bokeh.palettes import Spectral6
-from bokeh.layouts import row, Column
-from bokeh.models import Slider, Select
-from bokeh.transform import dodge
+from bokeh.layouts import Column
 from bokeh.models import Select, DatePicker, Panel
 
 def line_plot(df):

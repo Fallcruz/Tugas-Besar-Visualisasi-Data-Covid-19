@@ -1,12 +1,10 @@
 import pandas as pd
 from bokeh.plotting import figure
-from bokeh.models import HoverTool, ColumnDataSource
-from bokeh.models import CategoricalColorMapper
+from bokeh.models import ColumnDataSource
 from bokeh.palettes import Spectral6
-from bokeh.layouts import row, Column
+from bokeh.layouts import Column
 from bokeh.transform import dodge
 from bokeh.models import DateRangeSlider, Panel
-from datetime import datetime
 
 def bar_plot(df):
 
